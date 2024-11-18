@@ -17,15 +17,21 @@
     <div class="container">
         <h1>Фразовый конструктор</h1>
         <div class="row"> 
-            <form action="submit.php" method="POST">
-                <div class="col-sm"> <!-- Субъекты -->
-                    <label for="subjects">Выберите предмет:</label>
-                    <?php include 'phraseConstructor.php'?>
-                       
-                    <br>
-                    <button type="button" class="btn btn-primary" style="float: right;" onclick="randomSubject()">Случайно</button>       ​
-                </div>
-            </form>
+            <div class="col-sm"> <!-- Субъекты -->
+                <select class="form-select" aria-label="Default select example" id="subject">
+                    <option value="papa.jpg" selected>Папа</option>
+                    <option value="mama.jpg">Мама</option>
+                    <option value="brother.jpg">Мальчик</option>
+                    <option value="sister.jpg">Девочка</option>
+                    <option value="grandpa.jpg">Дедушка</option>
+                    <option value="grandma.jpg">Бабушка</option>
+                    <option value="dog.jpg">Собака</option>
+                    <option value="cat.jpg">Кошка</option>
+                </select>                        
+                <br>
+                <button type="button" class="btn btn-primary" style="float: right;" onclick="randomSubject()">Случайно</button>       ​
+
+            </div>
 
             <div class="col-sm"> <!-- Глаголы -->
                 <select class="form-select" aria-label="Default select example" id="verb">

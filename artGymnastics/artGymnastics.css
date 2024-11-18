@@ -1,0 +1,64 @@
+/* Основные стили для body */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Контейнер для игры, который будет занимать всю доступную ширину */
+  .game-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 колонки, каждая занимает равную долю доступной ширины */
+    gap: 10px; /* Отступы между элементами */
+    justify-content: center; /* Центрирование элементов по горизонтали */
+    width: 100%; /* Контейнер занимает всю доступную ширину */
+    max-width: 1200px; /* Максимальная ширина контейнера (по желанию) */
+    margin: 50px auto; /* Центрирование контейнера по вертикали и отступ сверху */
+  }
+  
+  /* Стиль для карточек */
+  .card {
+    width: 100%; /* Карточка будет занимать всю ширину своей ячейки */
+    aspect-ratio: 1; /* Высота будет равна ширине (1:1) */
+    perspective: 1000px; /* Для 3D эффекта */
+    cursor: pointer; /* Указатель мыши при наведении */
+  }
+  
+  /* Стили для внутренней части карточки */
+  .card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s; /* Плавный переход для переворота */
+  }
+  
+  /* При добавлении класса .flip карточка переворачивается */
+  .card.flip .card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Стили для лицевой и оборотной сторон карточки */
+  .card-front,
+  .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Скрыть заднюю сторону при перевороте */
+    border-radius: 10px; /* Закругленные углы */
+  }
+  
+  /* Лицевая сторона карточки */
+  .card-front {
+    background-color: #007bff;
+  }
+  
+  /* Оборотная сторона карточки */
+  .card-back {
+    background-size: cover; /* Картинка на оборотной стороне растягивается по размеру карточки */
+    background-position: center; /* Центрирование фона */
+    transform: rotateY(180deg); /* Поворачивает оборотную сторону карточки */
+  }
+  
